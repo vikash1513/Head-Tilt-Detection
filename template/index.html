@@ -1,0 +1,206 @@
+<!-- 
+  @Author: Dastan_Alam
+  @Date:   08-07-2023 11:40:25 AM       11:40:25
+  @Last Modified by:   Dastan_Alam
+  @Last Modified time: 09-07-2023 11:38:12 PM       23:38:12
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+    hr {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="https://drive.google.com/uc?export=view&id=127pBvgVEBoJHOTatvFHCze5GUUmmbyIj" width="30" height="30" class="d-inline-block align-top" alt="">
+        Head Tilt Detection
+      </a>
+    </nav>
+
+  </div>
+  <hr>
+  <div class="container-fluid one">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+          type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+          type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-Details-tab" data-bs-toggle="pill" data-bs-target="#pills-Details"
+          type="button" role="tab" aria-controls="pills-Details" aria-selected="false">Details</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="row">
+          <div class="col-6">
+            <div class="card text-center">
+              <div class="card-header">
+                Image viewer
+              </div>
+              <div>
+                <img id="uploadedImage" src="https://drive.google.com/uc?export=view&id=1Wqi4NHY-AVb0pfSLF5pJT9yMou4Uml25" width="384" height="288">
+              </div>
+              <div class="card-footer text-muted">
+                Image Property
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                  type="button" role="tab" aria-controls="nav-home" aria-selected="true">LIVE</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                  type="button" role="tab" aria-controls="nav-profile" aria-selected="false">LOCAL</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
+
+                <div class="card text-center mt-3">
+                  <div class="card-body">
+                    <p class="card-text">Click the run button to run the program</p>
+                    <button class="btn btn-primary" onclick="startProgram()">RUN LIVE</button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                tabindex="0">
+                <div class="card text-center">
+                  <div class="card-header">
+                    Image selector:
+                  </div>
+                  <hr>
+
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                      <div class="input-group mb-3">
+                        <p></p>
+                        <input type="file" class="form-control" id="inputGroupFile02 uploadButton" name="image">
+                        <input type="submit" class="btn btn-success" value="Upload/RUN">
+                      </div>
+                  <div class="card-footer text-muted">
+                    Image locator form :
+                  </div>
+                </div>
+                <div class="card text-center mt-3">
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="###" class="card-img-top" alt="HARSH" width="250" height="500">
+              <div class="card-body">
+                <h5 class="card-title">HARSH MAHILANG</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="###" width="250" height="500"class="card-img-top" alt="VIKASH">
+              <div class="card-body">
+                <h5 class="card-title">VIKASH SAHU</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <!-- more -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <!-- more -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="pills-Details" role="tabpanel" aria-labelledby="pills-Details-tab">
+        <div class="card">
+          <div class="card-body">
+            Head Tilt Detection is a computer vision task that aims to measure the angle of the head in
+            an image or video. The angle is defined as the deviation of the head from the vertical axis,
+            which can be positive (tilted to the right) or negative (tilted to the left). The task can be
+            useful for applications such as face recognition, emotion recognition, gesture recognition,
+            and human-computer interaction.
+            The task can be formulated as a regression or classification problem, depending on the
+            output format. For regression, the output is a continuous value that represents the angle of
+            the head in degrees. For classification, the output is a discrete label that corresponds to
+            one of the predefined angle ranges, such as 0-15, 15-30, 30-45, etc.
+            The task can be solved using various methods, such as deep learning, geometric analysis,
+            or landmark detection
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="bg-light text-center text-lg-start fixed-bottom">
+    <!-- Copyright -->
+    <hr>
+    <div class="text-center p-3" style="background-color: #e3f2fd;">
+      © 2023 Copyright:
+      <a class="text-dark" href="">Head Tilt Detection</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script>
+     document.getElementById('uploadButton').addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        document.getElementById('uploadedImage').src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    });
+    
+    function startProgram() {
+            // Send a GET request to start the program
+            fetch('/start_program')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Program started');
+                    } else {
+                        console.error('Failed to start the program');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+  </script>
+</body>
+
+</html>
