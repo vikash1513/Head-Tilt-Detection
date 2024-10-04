@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, Response
 import cv2
 import mediapipe as mp
@@ -20,7 +19,7 @@ def upload():
         return 'No file selected!'
 
     file = request.files['image']
-    image = cv2.imdecode(np.fromstring(
+    image = cv2.imdecode(np.frombuffer(
         file.read(), np.uint8), cv2.IMREAD_COLOR)
 
     if image is not None:
@@ -279,6 +278,7 @@ def live():
         if cv2.waitKey(5) & 0xFF == ord('q'):
             break
     cap.release()
+    return "Success"
 
 
 if __name__ == '__main__':
